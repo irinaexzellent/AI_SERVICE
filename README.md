@@ -31,7 +31,7 @@ $ docker container ls
 
 API project:
 
-* http://localhost:8004/docs#
+* http://localhost:8000/docs#
 
 After sending a POST request in string format, you will receive information about the presence or absence of an anomaly in the operation of the equipment.
 Example string:
