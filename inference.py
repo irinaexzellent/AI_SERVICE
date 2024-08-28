@@ -6,19 +6,13 @@ import pandas as pd
 def create_sequences(values, time_steps):
     output = []
     for i in range(len(values) - time_steps + 1):
-        output.append(values[i : (i + time_steps)])
-
+        output.append(values[i:(i + time_steps)])
     return np.stack(output)
 
 
-def model_inference(df, load_model, StSc, UCL = 7.8, N_STEPS = 60):
-    print('model_inference')
-    print(df.to_markdown())
-    print(StSc)
+def model_inference(df, load_model, StSc, UCL = 7.8, N_STEPS = 80):
     # прогноз на всей выборке и построение невязки
-    print('StSc.transform(df)', StSc.transform(df))
     X = create_sequences(StSc.transform(df), N_STEPS)
-    print('X', X)
     cnn_residuals = pd.Series(np.sum(np.mean(np.abs(X - load_model.predict(X)), axis=1), axis=1))
 
     # выделение аномалий и разметка на нормальный и аномальный режимы
