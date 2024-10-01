@@ -11,7 +11,7 @@ Install Docker on your computer (https://www.docker.com/).
 
 Clone the repository and go to it on the command line:
 ```
-git clone git@github.com:irinaexzellent/ikonnikovirina.git
+git@github.com:irinaexzellent/AI_SERVICE.git
 ```
 # Description of commands for running an application in container
 
